@@ -1,0 +1,70 @@
+---
+import Image from 'astro/components/Image.astro';
+import Picture from 'astro/components/Picture.astro';
+import heroImage from '/src/assets/hero-1.webp';
+import heroImageMobile from '/src/assets/hero-1-mobile.webp';
+---
+
+<main class='hero banner-4-section'>
+  <!-- <img src='/src/assets/hero-1.webp' alt='BS Servis kamionski servis' class='bg-desktop' />
+  <img src='/src/assets/hero-2-mobile.webp' alt='BS Servis kamionski servis' class='bg-mobile' /> -->
+
+  <div class='text-container'>
+    <div class='banner-4-top-content'>
+      <h1 class='banner-4-title'>
+        Tune Car <br />
+        Level 1
+      </h1>
+      <div class='banner-4-desc'>
+        Mauris et tellus congue , rutrum neque a, varius felis. Phasellus nibh diam <br /> tincidunt nec risus ut, auctor
+        gravida metus that covers.
+      </div>
+    </div>
+    <div class='banner-4-bottom-content'>
+      <div class='banner-4-text'>We Are Certified License 2008 company</div>
+    </div>
+  </div>
+</main>
+
+<style>
+  .hero {
+    width: 100%;
+    min-height: 100vh;
+  }
+  .hero .bg-desktop {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: center;
+  }
+  .hero .bg-mobile {
+    display: none;
+  }
+
+  /*  */
+
+  @media (max-width: 768px) {
+    .hero .bg-desktop {
+      display: none;
+    }
+
+    .text-container {
+      position: relative;
+      padding: 8rem 1rem 0 1rem;
+      z-index: 10;
+    }
+
+    .hero .bg-mobile {
+      display: block;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+      z-index: 1;
+    }
+  }
+</style>

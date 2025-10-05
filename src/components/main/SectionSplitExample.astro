@@ -1,0 +1,14 @@
+---
+import Split from "../sections/Split.astro";
+import wireframeImg from "/public/img/placeholder/mockup-light-horizontal.webp";
+---
+
+<section>
+  <Split
+    heading='Text on Left'
+    text='This is an example of text on the left side and the image on the right.'
+    imgSrc={wireframeImg.src}
+    imgAlt='Example'
+    reverse={false}
+  />
+</section>
