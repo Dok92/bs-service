@@ -1,0 +1,416 @@
+---
+import Footer from '../components/main/Footer.astro';
+import Layout from '../layouts/Layout.astro';
+import AnimateOnScroll from '../animations/AnimateOnScroll.astro';
+import Navbar1 from '../components/navbars/Navbar1.astro';
+import Services from '../components/sections/Services.astro';
+import ServicesDesc from '../components/sections/ServicesDesc.astro';
+---
+
+<Layout>
+  <Navbar1 />
+  <section class='banner-4-section'>
+    <div class='banner-4-feature-image'></div>
+    <div class='banner-4-feature-image-2'></div>
+    <div class='banner-4-border-shape'>
+      <div class='banner-4-layer-1'></div>
+      <div class='banner-4-layer-2'></div>
+      <div class='banner-4-layer-3'><img src='/src/assets/shape/shape-6.png' alt='' /></div>
+    </div>
+    <div class='banner-4-feature-image-shape'></div>
+    <div class='banner-4-shape-1'></div>
+    <div class='banner-4-shape-2'></div>
+    <div class='banner-4-shape-3'></div>
+    <div class='auto-container'>
+      <div class='banner-4-top-content'>
+        <AnimateOnScroll animation='down-slide' duration={0.8} delay={0}>
+          <h1 class='banner-4-title'>Mobilni servis kamiona</h1>
+        </AnimateOnScroll>
+        <AnimateOnScroll animation='slide-from-left' duration={0.8} delay={0.8}>
+          <p class='banner-4-desc'>
+            Tu smo da vam u nevolji brzo rešimo probleme na kamionu, bilo da je reč o mehaničkim kvarovima, elektronici,
+            menjaču, kočnicama ili drugim komponentama vozila.
+          </p>
+        </AnimateOnScroll>
+        <AnimateOnScroll animation='up-slide' duration={0.8} delay={1.2}>
+          <!-- From Uiverse.io by adamgiebl -->
+          <div>
+            <a href='tel:+381638358440' class='button dark-bg'>Pozovite nas</a>
+          </div>
+        </AnimateOnScroll>
+      </div>
+      <div class='banner-4-bottom-content'>
+        <div class='banner-4-text'>Vraćamo u život vaše kamione od 2016</div>
+      </div>
+    </div>
+  </section>
+</Layout>
+<section class='about-5-section'>
+  <div class='about-5-shape'></div>
+  <div class='auto-container' id='about-container'>
+    <div class='about-5-content-wrap mb-3'>
+      <div class='sec-title-area mb_30'>
+        <div class='sub-title'>Vaš mobilni servis kamiona</div>
+        <h2 class='sec-title'>Posvećeni brzom, pouzdanom i profesionalnom servisu kamiona na terenu</h2>
+      </div>
+      <div class='about-5-desc'>
+        BS Servis je mobilni servis specijalizovan za kamione i teretna vozila. Naš cilj je da vam pomognemo brzo i
+        efikasno — bilo gde da se nalazite na teritoriji Srbije. Dolazimo na teren, otklanjamo kvarove na licu mesta i
+        vraćamo vaše vozilo u pokret bez gubljenja vremena.
+      </div>
+      <ul class='about-5-list'>
+        <li><img src='/img/icons/check.svg' alt='' />Brz izlazak na teren</li>
+        <li><img src='/img/icons/check.svg' alt='' />Iskusni majstori</li>
+        <li><img src='/img/icons/check.svg' alt='' />Specijalizovana oprema</li>
+        <li><img src='/img/icons/check.svg' alt='' />Fer cene i kvalitet usluge</li>
+      </ul>
+      <a href='tel:+381638358440' class='button dark-bg'>Pozovite</a>
+    </div>
+    <div class='about-5-images'>
+      <div class='about-5-image-1'>
+        <img src='/src/assets/about-image-1.webp' alt='' />
+      </div>
+      <div class='about-5-image-2'>
+        <img src='/src/assets/about-image-2.webp' alt='' />
+      </div>
+    </div>
+  </div>
+</section>
+<Services />
+<ServicesDesc />
+<Footer />
+
+<style>
+  .auto-container {
+    position: static;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  section.banner-4-section {
+    background: #161616;
+    padding-top: 170px;
+    position: relative;
+    overflow: hidden;
+  }
+  .banner-4-feature-image {
+    background-image: url(/src/assets/car-tow.webp);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 100px;
+    width: 65%;
+    background-size: cover;
+    background-position: right center;
+  }
+  .banner-4-feature-image-2 {
+    background-image: url(/src/assets/car-tow-car-only.webp);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 100px;
+    width: 66%;
+    background-size: cover;
+    background-position: right center;
+    z-index: 10;
+  }
+  p.banner-4-desc {
+    max-width: 600px;
+    font-size: var(--fs-400);
+    position: relative;
+    line-height: 1.6rem;
+    color: var(--text-primary);
+    font-weight: 400;
+    margin-bottom: var(--space-700);
+  }
+  .banner-4-top-content {
+    margin-bottom: 210px;
+  }
+  .banner-4-title {
+    position: relative;
+    max-width: 600px;
+  }
+  .banner-4-feature-image-shape {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    bottom: 0;
+    width: calc(50% - 215px);
+    background: #161616;
+  }
+  .banner-4-feature-image-shape:before {
+    position: absolute;
+    content: '';
+    left: 100%;
+    width: 760px;
+    top: -1px;
+    bottom: 0;
+    background: #161616;
+    clip-path: polygon(0 0, 0% 100%, 100% 0);
+  }
+  .banner-4-border-shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: calc(50% + 140px);
+    z-index: 9;
+    pointer-events: none;
+  }
+  .banner-4-layer-1 {
+    position: absolute;
+    top: -30px;
+    right: 77px;
+    bottom: -190px;
+    width: 13px;
+    border-left: 1px solid #272727;
+    border-right: 1px solid #272727;
+    transform: rotate(43deg);
+  }
+  .banner-4-layer-2 {
+    position: absolute;
+    top: -30px;
+    right: 13px;
+    bottom: -190px;
+    width: 48px;
+    transform: rotate(43deg);
+    background: #1a1a1a;
+  }
+  .banner-4-layer-3 {
+    position: absolute;
+    top: 120px;
+    right: -379px;
+  }
+  .banner-4-shape-1 {
+    position: absolute;
+    bottom: -1px;
+    height: 64px;
+    width: calc(50% - 126px);
+    left: -47px;
+    background: #f8f9fa;
+    transform: skewX(-45deg);
+    z-index: 9;
+  }
+  .banner-4-shape-2 {
+    height: 64px;
+    position: absolute;
+    bottom: -1px;
+    width: calc(50% + 85px);
+    transform: skewX(-45deg);
+  }
+  .banner-4-shape-2:before {
+    position: absolute;
+    content: '';
+    right: 0;
+    width: 270px;
+    height: 64px;
+    background: var(--primary-light);
+  }
+  .banner-4-shape-3 {
+    position: absolute;
+    right: -30px;
+    bottom: 0;
+    height: 62px;
+    background: var(--primary-light);
+    width: 120px;
+    transform: skewX(-45deg);
+  }
+  .banner-4-text {
+    font-size: 18px;
+    color: #5d6a76;
+    font-weight: 700;
+    position: relative;
+    z-index: 9;
+    margin-bottom: 16px;
+  }
+  .about-5-shape {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    height: 710px;
+    /* bottom: 140px; */
+    width: calc(50% - 204px);
+    background: #f8f9fa;
+    clip-path: polygon(0 0, 0% 100%, 100% 0);
+  }
+  section.banner-4-section .btn-1 span {
+    background-color: #fff;
+  }
+  section.banner-4-section .btn-1:hover {
+    color: #222;
+  }
+  .sub-title {
+    font-size: var(--fs-200);
+    letter-spacing: 1px;
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-left: 30px;
+    position: relative;
+    display: inline-block;
+  }
+  .sub-title:before {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 2px;
+    background-color: var(--primary);
+    left: 0;
+    top: 12px;
+  }
+  h2.sec-title {
+    margin-top: var(--space-200);
+  }
+  .title-desc.light {
+    color: rgb(255 255 255 / 60%);
+  }
+
+  /* ABOUT 5 */
+
+  section.about-5-section {
+    position: relative;
+    padding: var(--section-spacing-lg) 0;
+  }
+
+  #about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 120px;
+  }
+  .about-5-desc {
+    font-size: var(--fs-300);
+    line-height: 28px;
+    color: #525252;
+    font-weight: 400;
+    margin-bottom: var(--space-400);
+  }
+  ul.about-5-list {
+    font-size: var(--fs-400);
+    line-height: 40px;
+    color: #2a2a2a;
+    font-weight: 700;
+    margin-bottom: 30px;
+    padding: 0;
+    list-style: none;
+  }
+  ul.about-5-list li {
+    display: flex;
+    align-items: center;
+  }
+  ul.about-5-list li img {
+    width: 35px;
+    height: auto;
+    padding-right: 15px;
+  }
+  .about-5-content-wrap {
+    position: relative;
+    /* margin-right: -30px; */
+  }
+  .about-5-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    min-width: 0;
+  }
+  .about-5-image-1 {
+    margin-bottom: 30px;
+  }
+  .about-5-image-2 {
+    margin-bottom: 30px;
+  }
+
+  /* From Uiverse.io by adamgiebl */
+  .button {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    padding: 20px 35px 17px;
+    text-align: center;
+    z-index: 1;
+    font-size: var(--fs-200);
+    letter-spacing: 1px;
+    line-height: 26px;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+    border-radius: 5px;
+    background-image: linear-gradient(90deg, #d90329 0%, #d92c04 100%);
+    text-decoration: none;
+  }
+
+  .button:hover {
+    box-shadow:
+      0px 0.1em 0.2em rgb(45 35 66 / 40%),
+      0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%),
+      inset 0px -0.1em 0px #af031f;
+    transform: translateY(-0.1em);
+  }
+  .button.dark-bg:hover {
+    box-shadow:
+      0px 0.1em 0.2em rgba(255, 60, 60, 0.4),
+      0px 0.4em 0.7em -0.1em rgba(255, 35, 35, 0.3),
+      inset 0px -0.1em 0px #af031f;
+    transform: translateY(-0.1em);
+  }
+
+  .button:active {
+    box-shadow: inset 0px 0.1em 0.6em #91021a;
+    transform: translateY(0em);
+  }
+
+  @media (max-width: 768px) {
+    .auto-container {
+      padding: 0px var(--space-400);
+    }
+    section.banner-4-section {
+      background: url(/src/assets/hero-2-mobile.webp) bottom / contain no-repeat black;
+    }
+    #about-container {
+      grid-template-columns: auto;
+    }
+    section.banner-4-section {
+      min-height: 100vh;
+      padding-top: 100px;
+    }
+    .banner-4-feature-image {
+      background-image: none;
+      display: none;
+    }
+    .banner-4-feature-image-2 {
+      background-image: none;
+      display: none;
+    }
+    .banner-4-feature-image-shape {
+      display: none;
+    }
+    .banner-4-border-shape {
+      display: none;
+    }
+    .banner-4-shape-1 {
+      display: none;
+    }
+    .banner-4-shape-2 {
+      display: none;
+    }
+    .banner-4-shape-3 {
+      display: none;
+    }
+    .banner-4-bottom-content {
+      display: none;
+    }
+    .about-5-images {
+      flex-direction: column;
+    }
+    .about-5-images div {
+      width: 100%;
+    }
+    .about-5-images img {
+      width: 100%;
+      height: auto;
+    }
+  }
+</style>

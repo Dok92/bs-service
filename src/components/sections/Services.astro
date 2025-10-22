@@ -1,0 +1,196 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+---
+
+<SectionLayout padding='full' bg='dark' container>
+  <p class='sub-title'>usluge</p>
+  <h2 class='section-title'>Naše usluge</h2>
+  <p class='description'>
+    Dolazimo na vašu lokaciju gde god bili na teritoriji Srbije, brzo dijagnostikujemo kvar i otklanjamo ga na licu
+    mesta - kako biste što pre nastavili vožnju bez zastoja i troškova šlepanja.
+  </p>
+  <div class='services-grid'>
+    <div class='service-item'>
+      <div class='inner-box'>
+        <img src='/img/icons/services/alternator.svg' alt='' class='service-img' />
+        <h3 class='section-title service-title'>Popravka alternatora</h3>
+        <a href='#electrical'>
+          pročitaj više <img src='/img/icons/arrow-sm-right.svg' alt='' />
+        </a>
+      </div>
+    </div>
+    <div class='service-item'>
+      <div class='inner-box'>
+        <img src='/img/icons/services/battery.svg' alt='' class='service-img' />
+        <h3 class='section-title service-title'>Zamena akumulatora</h3>
+        <a href='#electrical'>
+          pročitaj više <img src='/img/icons/arrow-sm-right.svg' alt='' />
+        </a>
+      </div>
+    </div>
+    <div class='service-item'>
+      <div class='inner-box'>
+        <img src='/img/icons/services/diagnostic.svg' alt='' class='service-img' />
+        <h3 class='section-title service-title'>Dijagnostika kamiona</h3>
+        <a href='#diagnostics'>
+          pročitaj više <img src='/img/icons/arrow-sm-right.svg' alt='' />
+        </a>
+      </div>
+    </div>
+    <div class='service-item'>
+      <div class='inner-box'>
+        <img src='/img/icons/services/engine.svg' alt='' class='service-img' />
+        <h3 class='section-title service-title'>Popravka motora kamiona</h3>
+        <a href='#mechanical'>
+          pročitaj više <img src='/img/icons/arrow-sm-right.svg' alt='' />
+        </a>
+      </div>
+    </div>
+    <div class='service-item'>
+      <div class='inner-box'>
+        <img src='/img/icons/services/lights.svg' alt='' class='service-img' />
+        <h3 class='section-title service-title'>Servis svetala i elektrike</h3>
+        <a href='#electrical'>
+          pročitaj više <img src='/img/icons/arrow-sm-right.svg' alt='' />
+        </a>
+      </div>
+    </div>
+    <div class='service-item'>
+      <div class='inner-box'>
+        <img src='/img/icons/services/suspension.png' alt='' class='service-img' />
+        <h3 class='section-title service-title'>Popravka vešanja kamiona</h3>
+        <a href='#mechanical'>
+          pročitaj više <img src='/img/icons/arrow-sm-right.svg' alt='' />
+        </a>
+      </div>
+    </div>
+    <div class='service-item'>
+      <div class='inner-box'>
+        <img src='/img/icons/services/axle.png' alt='' class='service-img' />
+        <h3 class='section-title service-title'>Servis osovina i diferencijala</h3>
+        <a href='#mechanical'>
+          pročitaj više <img src='/img/icons/arrow-sm-right.svg' alt='' />
+        </a>
+      </div>
+    </div>
+    <div class='service-item'>
+      <div class='inner-box'>
+        <img src='/img/icons/services/brakes.svg' alt='' class='service-img' />
+        <h3 class='section-title service-title'>Popravka kočionog sistema</h3>
+        <a href='#mechanical'>
+          pročitaj više <img src='/img/icons/arrow-sm-right.svg' alt='' />
+        </a>
+      </div>
+    </div>
+    <div class='service-item'>
+      <div class='inner-box'>
+        <img src='/img/icons/services/electric.svg' alt='' class='service-img' />
+        <h3 class='section-title service-title'>Električni kvarovi na kamionu</h3>
+        <a href='#electrical'>
+          pročitaj više <img src='/img/icons/arrow-sm-right.svg' alt='' />
+        </a>
+      </div>
+    </div>
+    <div class='service-item'>
+      <div class='inner-box'>
+        <img src='/img/icons/services/hvac.png' alt='' class='service-img' />
+        <h3 class='section-title service-title'>Servis grejanja i klime</h3>
+        <a href='#cooling'>
+          pročitaj više <img src='/img/icons/arrow-sm-right.svg' alt='' />
+        </a>
+      </div>
+    </div>
+    <div class='service-item'>
+      <div class='inner-box'>
+        <img src='/img/icons/services/radiator.svg' alt='' class='service-img' />
+        <h3 class='section-title service-title'>Popravka sistema hlađenja</h3>
+        <a href='#cooling'>
+          pročitaj više <img src='/img/icons/arrow-sm-right.svg' alt='' />
+        </a>
+      </div>
+    </div>
+    <div class='service-item'>
+      <div class='inner-box'>
+        <img src='/img/icons/services/transmission.png' alt='' class='service-img' />
+        <h3 class='section-title service-title'>Servis menjača i kvačila</h3>
+        <a href='#mechanical'>
+          pročitaj više <img src='/img/icons/arrow-sm-right.svg' alt='' />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      width: 100%;
+      margin-top: var(--space-700);
+    }
+
+    .service-item {
+      border: 1px solid #363636;
+      padding: var(--space-500) var(--space-500);
+      text-align: left;
+    }
+
+    /* .inner-box {
+    transition: transform 0.5s ease;
+  }
+
+  .inner-box:hover {
+    transform: translateY(-10px);
+  } */
+
+    .service-img {
+      width: 65px;
+      height: 65px;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: var(--primary-lightest);
+      text-decoration: none;
+      font-size: var(--fs-300);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--text-primary);
+    }
+
+    a:hover img {
+      margin-left: 10px;
+    }
+
+    a img {
+      width: 28px;
+      margin-left: 4px;
+      transition: margin-left 0.3s ease;
+    }
+
+    /* Responsive grid breakpoints */
+    @media (max-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</SectionLayout>

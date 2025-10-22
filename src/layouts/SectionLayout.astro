@@ -1,0 +1,167 @@
+---
+let { container, padding = '', bg = 'light' } = Astro.props;
+
+switch (padding) {
+  case 'full':
+    padding = 'padding-full';
+    break;
+  case 'horizontal':
+    padding = 'padded-horizontal';
+    break;
+  case 'vertical':
+    padding = 'padded-vertical';
+    break;
+  case true:
+    padding = 'padding-full';
+    break;
+  case 'top':
+    padding = 'padded-top';
+    break;
+  case 'bottom':
+    padding = 'padded-bottom';
+    break;
+  default:
+    padding = '';
+}
+---
+
+<section class={`${padding} ${bg}`}>
+  {
+    container ? (
+      <div class='container'>
+        <slot />
+      </div>
+    ) : (
+      <slot />
+    )
+  }
+</section>
+
+<style>
+  section {
+    background: var(--section-bg);
+    color: var(--section-text);
+  }
+
+  section.light {
+    --section-bg: var(--bg);
+    --section-text: #525252;
+    --section-title: #111;
+    --section-subtitle: var(--primary);
+  }
+
+  section.dark {
+    --section-bg: #111;
+    --section-text: #dbdbdb;
+    --section-title: #fff;
+    --section-subtitle: var(--primary-lightest);
+  }
+
+  section.padding-full {
+    padding: var(--section-spacing-lg) var(--section-spacing-sm);
+    width: 100%;
+  }
+
+  section.padded-horizontal {
+    padding: 0 var(--section-spacing-sm);
+    width: 100%;
+  }
+
+  section.padded-vertical {
+    padding: var(--section-spacing-lg) 0;
+    width: 100%;
+  }
+
+  section.padded-top {
+    padding-top: var(--section-spacing-lg);
+    width: 100%;
+  }
+
+  section.padded-bottom {
+    padding-bottom: var(--section-spacing-lg);
+    width: 100%;
+  }
+
+  .container {
+    max-width: 1010px;
+    margin-inline: auto;
+  }
+
+  section :global(h2.section-title, h3.section-title) {
+    color: var(--section-title);
+  }
+
+  section :global(.sub-title) {
+    font-size: var(--fs-200);
+    letter-spacing: 1px;
+    color: var(--section-subtitle);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-left: 30px;
+    position: relative;
+    display: inline-block;
+  }
+
+  section :global(.sub-title):before {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 2px;
+    background-color: var(--section-subtitle);
+    left: 0;
+    top: 12px;
+  }
+
+  section :global(.title) {
+    margin-top: var(--space-200);
+  }
+
+  section :global(.description) {
+    max-width: 50%;
+    font-size: var(--fs-300);
+    line-height: 28px;
+    color: var(--section-text);
+    font-weight: 400;
+    margin-bottom: var(--space-400);
+  }
+
+  section :global(ul.standard) {
+    font-size: var(--fs-400);
+    line-height: 40px;
+    color: var(--section-text);
+    font-weight: 700;
+    margin-bottom: 30px;
+    padding: 0;
+    list-style: none;
+  }
+
+  section :global(ul.standard li) {
+    display: flex;
+    align-items: center;
+  }
+
+  section :global(ul.standard li img) {
+    width: 35px;
+    height: auto;
+    padding-right: 15px;
+  }
+
+  @media (max-width: 768px) {
+    section.padding-full {
+      padding: var(--section-spacing-md) var(--section-spacing-sm);
+    }
+    section.padded-horizontal {
+      padding: 0 var(--section-spacing-sm);
+    }
+    section.padded-vertical {
+      padding: var(--section-spacing-md) 0;
+    }
+    .container {
+      padding: 0 var(--space-400);
+    }
+
+    section :global(.description) {
+      max-width: 100%;
+    }
+  }
+</style>

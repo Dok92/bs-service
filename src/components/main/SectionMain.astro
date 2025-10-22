@@ -1,0 +1,59 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+---
+
+<SectionLayout />
+<style>
+  .sub-title {
+    font-size: var(--fs-200);
+    letter-spacing: 1px;
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-left: 30px;
+    position: relative;
+    display: inline-block;
+  }
+  .sub-title:before {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 2px;
+    background-color: var(--primary);
+    left: 0;
+    top: 12px;
+  }
+
+  .title {
+    margin-top: var(--space-200);
+  }
+
+  .description {
+    font-size: var(--fs-300);
+    line-height: 28px;
+    color: #797979;
+    font-weight: 400;
+    margin-bottom: var(--space-400);
+  }
+
+  ul {
+    font-size: var(--fs-400);
+    line-height: 40px;
+    color: #2a2a2a;
+    font-weight: 700;
+    margin-bottom: 30px;
+    padding: 0;
+    list-style: none;
+  }
+
+  ul li {
+    display: flex;
+    align-items: center;
+  }
+
+  ul li img {
+    width: 35px;
+    height: auto;
+    padding-right: 15px;
+  }
+</style>

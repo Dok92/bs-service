@@ -1,0 +1,14 @@
+SEO usluge:
+
+alternator.svg	Popravka alternatora kamiona
+battery.svg	Zamena akumulatora kamiona
+diagnostic.svg	Dijagnostika kamiona
+engine.svg	Popravka motora kamiona
+lights.svg	Servis svetala i elektrike
+suspension.png	Popravka vešanja kamiona
+axle.png	Servis osovina i diferencijala
+brakes.svg	Popravka kočionog sistema
+electric.svg	Električni kvarovi na kamionu
+hvac.png	Servis grejanja i klime
+radiator.svg	Popravka sistema hlađenja
+transmission.png	Servis menjača i kvačila

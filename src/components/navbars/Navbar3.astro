@@ -1,0 +1,212 @@
+---
+import "/src/styles/global.css";
+---
+
+<nav>
+  <img src="/img/logo-1.svg" alt="bs servis logo" class="logo" />
+  <div class="desktop-menu">
+    <div class="navigation">
+      <a href="#">Početna</a>
+      <a href="#">Šlep služba</a>
+    </div>
+    <div class="contact">
+      <!-- <img src="/img/icons/phone.svg" alt=""> -->
+      <a href="tel:+381641234567">+381 64 1234567</a>
+    </div>
+  </div>
+  <button class="menu-btn">
+    <span class="menu-btn__burger"></span>
+  </button>
+  <div class="mobile-menu">
+    <div class="menu-backdrop">
+  
+    </div>
+    <div class="menu-box">
+  
+    </div>
+  </div>
+</nav>
+
+<style>
+nav {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+nav .logo {
+  width: 180px;
+  height: auto;
+  margin-left: 2rem;
+}
+.desktop-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4rem;
+  width: 100%;
+}
+nav .navigation {
+  display: flex;
+  gap: 2rem;
+  margin-left: 2rem;
+}
+nav a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+nav a:hover {
+  color: var(--primary);
+}
+nav .contact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 2rem;
+}
+.menu-btn {
+  display: none;
+}
+.mobile-menu {
+  display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  .logo {
+    display: block;
+    width: 140px;
+    height: auto;
+    margin-left: 1rem;
+  }
+  button.menu-btn {
+    position: relative;
+    right: 0;
+    width: 30px;
+    height: 22px;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 101;
+  }
+  .mobile-menu .menu-backdrop {
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	-webkit-transform: translateX(101%);
+	-ms-transform: translateX(101%);
+	transform: translateX(101%);
+	transition: all 900ms ease;
+	-moz-transition: all 900ms ease;
+	-webkit-transition: all 900ms ease;
+	-ms-transition: all 900ms ease;
+	-o-transition: all 900ms ease;
+	background-color: var(--primary);
+}
+.mobile-menu-visible .menu-backdrop {
+	opacity: 0.70;
+	visibility: visible;
+	-webkit-transition: all 0.7s ease;
+	-o-transition: all 0.7s ease;
+	transition: all 0.7s ease;
+	-webkit-transform: translateX(0%);
+	-ms-transform: translateX(0%);
+	transform: translateX(0%);
+}
+.mobile-menu .menu-box {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	max-height: 100%;
+	overflow-y: auto;
+	background: #202020;
+	padding: 0px 0px;
+	z-index: 5;
+	opacity: 0;
+	visibility: hidden;
+	border-radius: 0px;
+	-webkit-transform: translateX(101%);
+	-ms-transform: translateX(101%);
+	transform: translateX(101%);
+}
+.mobile-menu-visible .menu-box {
+	opacity: 1;
+	visibility: visible;
+	-webkit-transition: all 0.7s ease;
+	-o-transition: all 0.7s ease;
+	transition: all 0.7s ease;
+	-webkit-transform: translateX(0%);
+	-ms-transform: translateX(0%);
+	transform: translateX(0%);
+}
+
+  .menu-btn__burger {
+    width: 100%;
+    height: 3px;
+    background: var(--text-primary);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  .menu-btn__burger::before,
+  .menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: var(--text-primary);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  .menu-btn__burger::before {
+    transform: translateY(-8px);
+  }
+  .menu-btn__burger::after {
+    transform: translateY(8px);
+  }
+  .menu-btn:hover .menu-btn__burger::before {
+    transform: translateY(-10px);
+  }
+  .menu-btn:hover .menu-btn__burger::after {
+    transform: translateY(10px);
+  }
+  .menu-btn:focus {
+    outline: none;
+  }
+  .menu-btn:active .menu-btn__burger {
+    background: var(--text-primary);
+    transform: scale(0.95);
+  }
+  .menu-btn:active .menu-btn__burger::before {
+    background: var(--text-primary);
+    transform: translateY(-8px) scale(0.95);
+  }
+  .menu-btn:active .menu-btn__burger::after {
+    background: var(--text-primary);
+    transform: translateY(8px) scale(0.95);
+  }
+  .desktop-menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+  }
+}
+</style>

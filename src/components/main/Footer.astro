@@ -1,0 +1,159 @@
+---
+import SectionLayout from '../../layouts/SectionLayout.astro';
+
+const date = new Date();
+const year = date.getFullYear();
+---
+
+<SectionLayout padding='top' bg='dark' container>
+  <footer>
+    <div class='top-row'>
+      <img src='/img/logo.webp' alt='BS Servis logo' />
+      <div class='navigation'>
+        <h4>Stranice</h4>
+        <div class='pages'>
+          <a href='#'>Početna</a>
+          <a href='#'>Šlep služba</a>
+        </div>
+      </div>
+      <div class='contact'>
+        <h4>Kontakt</h4>
+        <div class='contact-wrapper'>
+          <div class='phone'>
+            <p>Pozovite nas:</p>
+            <a href='tel:+381638358440'>+381 63 835 8440</a>
+          </div>
+          <div class='email'>
+            <p>Posaljite e-mail:</p>
+            <a href='mailto:Bsservise22@gmail.com'>Bsservise22@gmail.com</a>
+          </div>
+          <div class='socials'>
+            <a href='https://www.facebook.com/' target='_blank'>
+              <img src='/img/icons/fb-rounded.svg' alt='Facebook' />
+            </a>
+            <a href='https://www.instagram.com/' target='_blank'>
+              <img src='/img/icons/instagram.svg' alt='Instagram' />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='bottom-row'>
+      <p class='copyright'>&copy; {year} BSService</p>
+      <p class='credits'>
+        Dizajnirao: <a href='https://webdok.rs' target='_blank'>WebDok</a>
+      </p>
+    </div>
+  </footer>
+</SectionLayout>
+
+<style>
+  footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .top-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .top-row img {
+    width: 210px;
+    height: auto;
+  }
+
+  h4 {
+    margin: 0 0 1.5rem 0;
+    color: white;
+  }
+
+  .navigation .pages {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact p {
+    font-size: var(--fs-300);
+    margin: 0;
+  }
+
+  .phone,
+  .email {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .navigation a,
+  .phone a,
+  .email a {
+    text-decoration: none;
+    color: var(--text-primary-dark-100);
+    font-size: var(--fs-300);
+  }
+
+  .socials {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .socials img {
+    width: 30px;
+    height: auto;
+  }
+
+  .bottom-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-top: 1px solid var(--text-primary-light-400);
+  }
+
+  .copyright {
+    font-size: var(--fs-200);
+  }
+
+  .credits {
+    font-size: var(--fs-200);
+  }
+
+  .credits a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .top-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2.5rem;
+    }
+
+    /* .navigation,
+    .contact {
+      text-align: center;
+    } */
+  }
+</style>
