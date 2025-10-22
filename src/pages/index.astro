@@ -5,6 +5,9 @@ import AnimateOnScroll from '../animations/AnimateOnScroll.astro';
 import Navbar1 from '../components/navbars/Navbar1.astro';
 import Services from '../components/sections/Services.astro';
 import ServicesDesc from '../components/sections/ServicesDesc.astro';
+import Image from 'astro/components/Image.astro';
+import about1 from '../assets/about-image-1.webp';
+import about2 from '../assets/about-image-2.webp';
 ---
 
 <Layout>
@@ -68,10 +71,10 @@ import ServicesDesc from '../components/sections/ServicesDesc.astro';
     </div>
     <div class='about-5-images'>
       <div class='about-5-image-1'>
-        <img src='/src/assets/about-image-1.webp' alt='' />
+        <Image src={about1} alt='Servis kamion i kombi' />
       </div>
       <div class='about-5-image-2'>
-        <img src='/src/assets/about-image-2.webp' alt='' />
+        <Image src={about2} alt='Servis kamiona bez točka' />
       </div>
     </div>
   </div>
