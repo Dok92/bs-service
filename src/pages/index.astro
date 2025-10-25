@@ -26,16 +26,16 @@ import about2 from '../assets/about-image-2.webp';
     <div class='banner-4-shape-3'></div>
     <div class='auto-container'>
       <div class='banner-4-top-content'>
-        <AnimateOnScroll animation='down-slide' duration={0.8} delay={0}>
+        <AnimateOnScroll animation='down-slide' duration={0.6} delay={0}>
           <h1 class='banner-4-title'>Mobilni servis kamiona</h1>
         </AnimateOnScroll>
-        <AnimateOnScroll animation='slide-from-left' duration={0.8} delay={0.8}>
+        <AnimateOnScroll animation='slide-from-left' duration={0.6} delay={0.6}>
           <p class='banner-4-desc'>
             Tu smo da vam u nevolji brzo rešimo probleme na kamionu, bilo da je reč o mehanici, elektronici ili drugim
             komponentama vozila.
           </p>
         </AnimateOnScroll>
-        <AnimateOnScroll animation='up-slide' duration={0.8} delay={1.2}>
+        <AnimateOnScroll animation='up-slide' duration={0.6} delay={1}>
           <!-- From Uiverse.io by adamgiebl -->
           <div>
             <a href='tel:+381638358440' class='button dark-bg'>Pozovite nas</a>
@@ -125,6 +125,7 @@ import about2 from '../assets/about-image-2.webp';
     color: var(--text-primary);
     font-weight: 400;
     margin-bottom: var(--space-700);
+    z-index: 10;
   }
   .banner-4-top-content {
     margin-bottom: 210px;
@@ -223,7 +224,7 @@ import about2 from '../assets/about-image-2.webp';
     color: #5d6a76;
     font-weight: 700;
     position: relative;
-    z-index: 9;
+    z-index: 10;
     margin-bottom: 16px;
   }
   .about-5-shape {
@@ -382,6 +383,7 @@ import about2 from '../assets/about-image-2.webp';
 
     p.banner-4-desc {
       font-size: var(--fs-300);
+      z-index: 10;
     }
     .banner-4-feature-image {
       background-image: none;

@@ -1,10 +1,13 @@
 ---
+import Image from 'astro/components/Image.astro';
 import Footer from '../components/main/Footer.astro';
 import Layout from '../layouts/Layout.astro';
 import AnimateOnScroll from '../animations/AnimateOnScroll.astro';
 import Navbar1 from '../components/navbars/Navbar1.astro';
-import Services from '../components/sections/Services.astro';
 import ServicesDesc from '../components/sections/ServicesDesc.astro';
+import ServicesTow from '../components/sections/ServicesTow.astro';
+import about1 from '../assets/about-tow-image-1.webp';
+import about2 from '../assets/about-tow-image-2.webp';
 ---
 
 <Layout>
@@ -23,16 +26,16 @@ import ServicesDesc from '../components/sections/ServicesDesc.astro';
     <div class='banner-4-shape-3'></div>
     <div class='auto-container'>
       <div class='banner-4-top-content'>
-        <AnimateOnScroll animation='down-slide' duration={0.8} delay={0}>
-          <h1 class='banner-4-title'>Mobilni servis kamiona</h1>
+        <AnimateOnScroll animation='down-slide' duration={0.6} delay={0}>
+          <h1 class='banner-4-title'>Šlep služba Beograd</h1>
         </AnimateOnScroll>
-        <AnimateOnScroll animation='slide-from-left' duration={0.8} delay={0.8}>
+        <AnimateOnScroll animation='slide-from-left' duration={0.6} delay={0.6}>
           <p class='banner-4-desc'>
-            Tu smo da vam u nevolji brzo rešimo probleme na kamionu, bilo da je reč o mehaničkim kvarovima, elektronici,
-            menjaču, kočnicama ili drugim komponentama vozila.
+            Brza i pouzdana šlep služba u Beogradu - dostupni 24/7. Bez obzira na kvar, nezgodu ili potrebu za
+            transportom, stižemo brzo i vršimo šlep na željenu lokaciju.
           </p>
         </AnimateOnScroll>
-        <AnimateOnScroll animation='up-slide' duration={0.8} delay={1.2}>
+        <AnimateOnScroll animation='up-slide' duration={0.6} delay={0.8}>
           <!-- From Uiverse.io by adamgiebl -->
           <div>
             <a href='tel:+381638358440' class='button dark-bg'>Pozovite nas</a>
@@ -40,7 +43,7 @@ import ServicesDesc from '../components/sections/ServicesDesc.astro';
         </AnimateOnScroll>
       </div>
       <div class='banner-4-bottom-content'>
-        <div class='banner-4-text'>Vraćamo u život vaše kamione od 2016</div>
+        <div class='banner-4-text'>Brz i siguran transport u svakoj situaciji - šlep Beograd!</div>
       </div>
     </div>
   </section>
@@ -50,34 +53,36 @@ import ServicesDesc from '../components/sections/ServicesDesc.astro';
   <div class='auto-container' id='about-container'>
     <div class='about-5-content-wrap mb-3'>
       <div class='sec-title-area mb_30'>
-        <div class='sub-title'>Vaš mobilni servis kamiona</div>
-        <h2 class='sec-title'>Posvećeni brzom, pouzdanom i profesionalnom servisu kamiona na terenu</h2>
+        <div class='sub-title'>Vaša šlep služba Beograd</div>
+        <h2 class='sec-title'>BS Servis šlep Beograd - pouzdan partner za bezbedan transport</h2>
       </div>
       <div class='about-5-desc'>
-        BS Servis je mobilni servis specijalizovan za kamione i teretna vozila. Naš cilj je da vam pomognemo brzo i
-        efikasno — bilo gde da se nalazite na teritoriji Srbije. Dolazimo na teren, otklanjamo kvarove na licu mesta i
-        vraćamo vaše vozilo u pokret bez gubljenja vremena.
+        BS Servis šlep služba Beograd dostupna je 24 sata dnevno za šlepanje auta, kombija i kamiona na teritoriji
+        Beograda i cele Srbije. Bez obzira da li vam je potreban šlep Beograd zbog kvara, saobraćajne nezgode ili
+        jednostavnog transporta vozila, možete računati na brzu reakciju, sigurnu vuču i fer cenu šlep službe. Posvećeni
+        smo tome da svako šlepanje auta obavimo profesionalno, bez čekanja i skrivenih troškova.
       </div>
       <ul class='about-5-list'>
-        <li><img src='/img/icons/check.svg' alt='' />Brz izlazak na teren</li>
-        <li><img src='/img/icons/check.svg' alt='' />Iskusni majstori</li>
-        <li><img src='/img/icons/check.svg' alt='' />Specijalizovana oprema</li>
-        <li><img src='/img/icons/check.svg' alt='' />Fer cene i kvalitet usluge</li>
+        <li><img src='/img/icons/check.svg' alt='' />24/7 šlep služba Beograd</li>
+        <li><img src='/img/icons/check.svg' alt='' />Šlepanje auta</li>
+        <li><img src='/img/icons/check.svg' alt='' />Šlepanje kombija</li>
+        <li><img src='/img/icons/check.svg' alt='' />Šlepanje kamiona</li>
+        <li><img src='/img/icons/check.svg' alt='' />Pristupačna cena šlep službe</li>
       </ul>
       <a href='tel:+381638358440' class='button dark-bg'>Pozovite</a>
     </div>
     <div class='about-5-images'>
       <div class='about-5-image-1'>
-        <img src='/src/assets/about-image-1.webp' alt='' />
+        <Image src={about1} alt='' class='about-1' />
       </div>
       <div class='about-5-image-2'>
-        <img src='/src/assets/about-image-2.webp' alt='' />
+        <Image src={about2} alt='' class='about-2' />
       </div>
     </div>
   </div>
 </section>
-<Services />
-<ServicesDesc />
+<!-- <ServicesTow /> -->
+<ServicesTow />
 <Footer />
 
 <style>
@@ -122,6 +127,7 @@ import ServicesDesc from '../components/sections/ServicesDesc.astro';
     color: var(--text-primary);
     font-weight: 400;
     margin-bottom: var(--space-700);
+    z-index: 10;
   }
   .banner-4-top-content {
     margin-bottom: 210px;
@@ -316,10 +322,20 @@ import ServicesDesc from '../components/sections/ServicesDesc.astro';
     min-width: 0;
   }
   .about-5-image-1 {
+    max-width: 326px;
     margin-bottom: 30px;
   }
   .about-5-image-2 {
+    max-width: 377px;
     margin-bottom: 30px;
+  }
+  .about-5-image-1 img {
+    width: 100%;
+    height: auto;
+  }
+  .about-5-image-2 img {
+    width: 100%;
+    height: auto;
   }
 
   /* From Uiverse.io by adamgiebl */
@@ -366,14 +382,20 @@ import ServicesDesc from '../components/sections/ServicesDesc.astro';
     .auto-container {
       padding: 0px var(--space-400);
     }
+    h1 {
+      color: var(--text-primary-light-800) !important;
+    }
+    p.banner-4-desc {
+      color: var(--text-primary-light-700);
+    }
     section.banner-4-section {
-      background: url(/src/assets/hero-2-mobile.webp) bottom / contain no-repeat black;
+      background: url(/src/assets/slep-sluzba-hero-mobile-1.webp) bottom / contain no-repeat rgb(255, 255, 255);
     }
     #about-container {
       grid-template-columns: auto;
     }
     section.banner-4-section {
-      min-height: 100vh;
+      min-height: 100svh;
       padding-top: 100px;
     }
     .banner-4-feature-image {
@@ -409,8 +431,16 @@ import ServicesDesc from '../components/sections/ServicesDesc.astro';
       width: 100%;
     }
     .about-5-images img {
+      max-width:;
       width: 100%;
       height: auto;
+    }
+
+    .about-5-image-1 {
+      max-width: 100%;
+    }
+    .about-5-image-2 {
+      max-width: 100%;
     }
   }
 </style>
